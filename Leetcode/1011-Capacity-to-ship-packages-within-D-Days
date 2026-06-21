@@ -1,0 +1,35 @@
+class Solution {
+public:
+bool isValid(vector<int>& weights, int days,int MaxAllow){
+    int ship=0,day=1;
+    for(int i=0;i<weights.size();i++){
+        if(ship +weights[i]<=MaxAllow){
+            ship+=weights[i];
+        }else{
+            ship=weights[i];
+            day++;
+        }
+    }
+    if(day<=days){
+        return true;
+    }else{
+        return false;
+    }
+}
+    int shipWithinDays(vector<int>& weights, int days) {
+        int st=*max_element(weights.begin(), weights.end());
+        int sum=accumulate(weights.begin(),weights.end(),0);
+        int end=sum;
+        int ans=-1;
+        while(st<=end){
+            int mid=st+(end-st)/2;
+            if(isValid(weights,days,mid)){
+                ans=mid;
+                end=mid-1;
+            }else{
+                st=mid+1;
+            }
+        }
+        return ans;
+    }
+};
