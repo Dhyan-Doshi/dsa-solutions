@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int repeatedNTimes(vector<int>& nums) {
+        int k=nums.size();
+        int a=k/2;
+        int count=0;
+        //repeated element is for 3 times
+        for(int i=0;i<k;i++){
+            for(int j=i+1;j<k;j++){
+                if(nums[j]==nums[i]){
+                count++;
+                return nums[i];
+            }
+        }
+        }
+        return 0;
+    }
+};
