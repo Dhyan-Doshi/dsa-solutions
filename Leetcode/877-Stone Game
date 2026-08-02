@@ -1,0 +1,7 @@
+class Solution {
+public:
+    bool stoneGame(vector<int>& piles) {
+        return true;
+    }
+};
+//Hamesha first pe jo ayega vo hee jitega fs (sari cond ko dekhke pata lag raha hai)
