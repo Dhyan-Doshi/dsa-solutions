@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int smallestNumber(int n, int t) {
+        while(n>0){
+        string str=to_string(n);
+        int a=str.length();
+        int mul=1;
+        for(int i=0;i<a;i++){
+            mul*=(str[i]-'0');//VERY IMP
+        }
+        if(mul%t==0){
+            return n;
+        }else{
+            n++;
+        }
+        }
+        return 0;
+    }
+};
