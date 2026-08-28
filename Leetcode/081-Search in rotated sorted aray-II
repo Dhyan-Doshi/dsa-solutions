@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool search(vector<int>& nums, int target) {
+        int n=nums.size()-1;
+        for(int i=0;i<=n;i++){
+            if(nums[i]==target){
+                return true;
+            }//else{
+            //     return false;
+            // }
+        }
+        return false;
+    }
+};
+
+//BUT THIS IS FRM O(N) ,TRY WITH O(LOGN).
