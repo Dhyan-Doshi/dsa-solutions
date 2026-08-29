@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool checkGoodInteger(int n) {
+        string str=to_string(n);
+        int sum=0;
+        int summ=0;
+        for(int i=0;i<str.length();i++){
+            sum+=str[i]-'0';
+        }
+        int sum1=sum;
+        for(int i=0;i<str.length();i++){
+            summ+=((str[i]-'0')*(str[i]-'0'));
+        }
+        int sum2=summ;
+        if(sum2-sum1>=50){
+            return true;
+        }
+        return false;
+    }
+};
