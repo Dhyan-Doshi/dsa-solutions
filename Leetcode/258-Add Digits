@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int addDigits(int num) {
+       string str=to_string(num);
+       while(1>0){
+       if(str.length()==1){
+        return num;
+       }else{
+            int sum=0;
+            for(int i=0;i<str.length();i++){
+                sum+=str[i]-'0';//I forgot this every time....THIS IS USED TO CONVERT A CH DIGIT TO ITS ACUTAL INT VALUE.
+            }
+            string summ=to_string(sum);
+            if(summ.length()==1){
+                return sum;
+            }else{
+                str=summ;
+            }
+       }
+       }
+       return 0;
+    }
+};
