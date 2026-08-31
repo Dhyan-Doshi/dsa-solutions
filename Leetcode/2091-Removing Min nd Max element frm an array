@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int minimumDeletions(vector<int>& nums) {
+        int n=nums.size();
+        int MinIdx=0;
+        int MaxIdx=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]<nums[MinIdx]){
+                MinIdx=i;
+            }
+            if(nums[i]>nums[MaxIdx]){
+                MaxIdx=i;
+            }
+        }
+        int left=min(MinIdx,MaxIdx);
+        int right=max(MinIdx,MaxIdx);
+
+        int front=right+1;
+        int back=n-left;
+        int bothend=(left+1)+(n-right);
+        
+        return min({front, back, bothend});
+    }
+};
