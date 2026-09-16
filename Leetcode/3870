@@ -1,0 +1,12 @@
+public:
+    int countCommas(int n) {
+        int comma=0;
+        if(n>=1000){
+           for(int i=n;i>=1000;i--){
+                comma++;
+            }
+            return comma;
+        }
+        return comma;
+    }
+};
