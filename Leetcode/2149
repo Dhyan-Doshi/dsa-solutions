@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> ans(n);
+        int st=0;
+        int aa=0;
+        int oo=1;
+        //int aa=st+1;
+        while(st<n){
+            if(nums[st]>=0){
+                ans[aa]=nums[st];
+                aa++;
+                aa++;
+                //st++;
+            }else{
+                ans[oo]=nums[st];
+                oo++;
+                oo++;
+                //st++;
+            }
+            st++;
+        }
+        return ans;
+    }
+};
