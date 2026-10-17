@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        int n=nums.size();
+        int st=0;
+        vector<int>result;
+        sort(nums.begin(),nums.end());
+        while(st<n){
+            if(st==n-1){
+                result.push_back(nums[st]);
+                return result;
+            }
+            if(nums[st]==nums[st+1]){
+                st++;
+                st++;
+            }
+            else{
+               result.push_back(nums[st]);
+               st++;
+            }
+        }
+        return result;
+    }
+};
